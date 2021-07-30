@@ -13,7 +13,15 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/Yuliya-Piskunova13/react-native-test.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm,swift}"
+  s.header_dir = 'IInkUIReferenceImplementation'
+
+  s.source_files = ['IInkUIReferenceImplementation/Classes/**/*',
+    'ios/**/*.{h,m,mm,swift}',
+  'IInkUIReferenceImplementation/Classes/**']
+  s.preserve_paths = 'IInkUIReferenceImplementation/Classes/**'
+
+  s.dependency 'MyScriptInteractiveInk-Runtime', '1.4.1'
 
   s.dependency "React-Core"
+
 end

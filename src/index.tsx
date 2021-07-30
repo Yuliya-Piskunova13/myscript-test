@@ -1,9 +1,20 @@
-import { NativeModules } from 'react-native';
+import React from 'react';
+import { NativeModules, requireNativeComponent } from 'react-native';
 
-type TestType = {
-  multiply(a: number, b: number): Promise<number>;
-};
+const { MyscriptIntegration } = NativeModules;
+const MyObjcClass = NativeModules.MyObjcClass;
+console.log(NativeModules);
 
-const { Test } = NativeModules;
+const Switch = requireNativeComponent('MyScriptView');
+console.log(Switch);
 
-export default Test as TestType;
+console.log(MyObjcClass);
+console.log(MyscriptIntegration);
+
+//const Myscript = requireNativeComponent('MyscriptIntegration', DrawerView)
+
+export default class DrawerView extends React.Component {
+  render() {
+    return <Switch />;
+  }
+}

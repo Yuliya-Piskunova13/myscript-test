@@ -1,18 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import Test from 'react-native-test';
+import DrawerView from 'react-native-test';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    Test.multiply(3, 7).then(setResult);
-  }, []);
+  console.log('ffjfjfj', DrawerView);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <DrawerView />
+      <View>
+        <Text>fff</Text>
+      </View>
     </View>
   );
 }
